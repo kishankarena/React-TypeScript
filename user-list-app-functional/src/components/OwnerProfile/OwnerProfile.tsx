@@ -2,7 +2,7 @@ import React from "react";
 import "./OwnerProfile.css";
 import { Lock } from "react-feather";
 
-const OwnerProfile = (props) => {
+const OwnerProfile = (props:{image:string,name:string,email:string}) => {
   const { image, name, email } = props;
   return (
     <>

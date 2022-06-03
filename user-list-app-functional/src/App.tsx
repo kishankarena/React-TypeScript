@@ -1,7 +1,7 @@
 import "./App.css";
 import UserComponentWrapper from "./componentWrapper/UserComponentWrapper";
 
-const App = () => {
+const App:React.FC = () => {
   return <UserComponentWrapper />;
 };
 

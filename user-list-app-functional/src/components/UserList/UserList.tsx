@@ -2,8 +2,10 @@ import React from "react";
 import "./UserList.css";
 import OwnerProfile from "../OwnerProfile/OwnerProfile";
 import UserProfile from "../UserProfile/UserProfile";
+import { UserDatatype } from "../../componentWrapper/UserComponentWrapper";
 
-const UserList = (props) => {
+
+const UserList = (props:{userData:UserDatatype}) => {
   return (
     <div className="user-list">
       <table>

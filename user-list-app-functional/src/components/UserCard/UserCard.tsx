@@ -2,10 +2,11 @@ import React from "react";
 import "./UserCard.css";
 import { ProgressBar } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { rootState } from "../../Services/reducer";
 
-const UserCard = () => {
-  const user = useSelector((state) => state.user);
-  const { image, name, email, isVisible } = user;
+const UserCard:React.FC= () => {
+  const user = useSelector((state: rootState) => state.user);
+  const { image, name, email, isVisible }: Data = user;
   const progressFunction = () => {
     return Math.floor(Math.random() * 5000);
   };

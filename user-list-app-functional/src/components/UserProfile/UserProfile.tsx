@@ -4,7 +4,7 @@ import { Trash2 } from "react-feather";
 import { mouseEnter, mouseLeave } from "../../Services/actions/index";
 import { useDispatch } from "react-redux";
 
-const UserProfile = (props) => {
+const UserProfile = (props:Data) => {
   const { image, name, email } = props;
   const dispatch = useDispatch();
   return (
@@ -12,8 +12,6 @@ const UserProfile = (props) => {
       <td
         className="d-flex"
         onMouseEnter={() => {
-          // console.log("props:", props);
-          // handleHover(props);
           dispatch(mouseEnter(props));
         }}
         onMouseLeave={() => {

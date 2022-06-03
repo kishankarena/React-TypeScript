@@ -1,20 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { FC,useState, useEffect } from "react";
 import UserCard from "../components/UserCard/UserCard";
 import UserList from "../components/UserList/UserList";
 import { getUserData } from "../misc/configData";
 import ReactPaginate from "react-paginate";
 import "./UserComponentWrapper.css";
 
-const UserComponentWrapper = () => {
-  const [userData, setUserData] = useState([]);
-  const [pageNum, setPageNum] = useState(1);
+ export type UserDatatype = {
+  id:number,
+  avatar:string,
+  first_name:string,
+  last_name:string,
+  email:string,
+
+ }[]
+const UserComponentWrapper:FC = () => {
+  const [userData, setUserData] = useState<UserDatatype>([]);
+  const [pageNum, setPageNum] = useState<number>(1);
   useEffect(() => {
     getUserData(pageNum).then((result) => {
       setUserData(result.data);
     });
   }, [pageNum]);
 
-  const handlePageClick = (event) => {
+  const handlePageClick = (event: { selected: number }) => {
     setPageNum(event.selected + 1);
   };
 

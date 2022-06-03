@@ -1,4 +1,5 @@
-export const mouseEnter = (data) => {
+
+export const mouseEnter = (data: Data) => {
   return {
     type: "mouseEnter",
     payload: data,

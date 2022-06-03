@@ -1,7 +1,8 @@
-const initialData = {
+
+const initialData: InitialState = {
   user: { image: "", name: "", email: "", isVisible: false },
 };
-export const setUser = (state = initialData, action) => {
+export const setUser = (state = initialData, action:DataAction) => {
   switch (action.type) {
     case "mouseEnter": {
       const { image, name, email } = action.payload;
@@ -28,3 +29,5 @@ export const setUser = (state = initialData, action) => {
       return state;
   }
 };
+
+export type rootState = ReturnType<typeof setUser>
